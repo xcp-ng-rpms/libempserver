@@ -3,7 +3,7 @@
 Summary: A library of functions for running an emp server
 Name: libempserver
 Version: 1.1.0
-Release: 2%{?xsrel}%{?dist}
+Release: 2.0.1%{?xsrel}%{?dist}
 License: BSD
 Source0: libempserver-1.1.0.tar.gz
 
@@ -12,6 +12,9 @@ BuildRequires: json-c-devel
 %{?_cov_buildrequires}
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
+
+# YD: hack to avoid build failure
+%global debug_package %{nil}
 
 %description
 libempserver is a library of functions for creating an
@@ -60,6 +63,9 @@ libempserver
 %{_libdir}/%{name}.so
 
 %changelog
+* Tue Oct 29 2024 Yann Dirson <yann.dirson@vates.tech> - 1.1.0-2.0.1
+- prevent debug package build to workaround build issue on Alma9
+
 * Thu Feb 10 2022 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.1.0-2
 - CP-38416: Enable static analysis
 
