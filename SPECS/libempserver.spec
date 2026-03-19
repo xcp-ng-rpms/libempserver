@@ -3,7 +3,7 @@
 Summary: A library of functions for running an emp server
 Name: libempserver
 Version: 1.1.0
-Release: 2.0.1%{?xsrel}%{?dist}
+Release: 2.0.1%{?xsrel}~ydi4.1%{?dist}
 License: BSD
 Source0: libempserver-1.1.0.tar.gz
 
